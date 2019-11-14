@@ -14,7 +14,7 @@ getProxies：爬取网上的公共ip，用来访问一些用ip来反爬虫的网
 
 graduate：自己学校毕业课题分析
 
-hubeisuiqingbaobiao：帮同学做的湖北情报表的数据爬
+hubeisuiqingbaobiao：帮同学做的湖北水情报表的数据爬虫
 
 social——duty：帮别人做的公司社会责任信息爬虫
 
