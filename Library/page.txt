@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://opac.njxzc.edu.cn/reader/book_hist.php?page=5 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<meta name="referrer" content="no-referrer">
+<!-- 主菜单 -->
+<title>南京晓庄学院图书馆v5.6书目检索系统 </title>
+<link type="text/css" rel="stylesheet" href="./南京晓庄学院图书馆v5.6书目检索系统_files/style.css">
+<link type="text/css" rel="stylesheet" href="./南京晓庄学院图书馆v5.6书目检索系统_files/mylib.css">
+<link type="text/css" rel="stylesheet" href="./南京晓庄学院图书馆v5.6书目检索系统_files/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="./南京晓庄学院图书馆v5.6书目检索系统_files/font-awesome.css">
+
+
+<script type="text/javascript" src="./南京晓庄学院图书馆v5.6书目检索系统_files/jquery.js.下载"></script>
+<script type="text/javascript" src="./南京晓庄学院图书馆v5.6书目检索系统_files/jquery-ui.js.下载"></script>
+<script type="text/javascript" src="./南京晓庄学院图书馆v5.6书目检索系统_files/highlighter.js.下载"></script>
+
+
+<script type="text/javascript" src="./南京晓庄学院图书馆v5.6书目检索系统_files/md5.js.下载"></script>
+<script type="text/javascript" src="./南京晓庄学院图书馆v5.6书目检索系统_files/base64.js.下载"></script>
+<style>html, * {-webkit-user-select:text!important; -moz-user-select:text!important;}</style></head>
+<body>
+<div id="header_opac">
+	<h1 class="header_opac_img">
+		<div class="header_opac_logo">
+    	南京晓庄学院图书馆书目检索系统<br>
+			<p>Online Public Access Catalogue</p>
+
+		</div>
+	</h1>
+	<div class="header_right header_right_top">
+		<p class="header_right_font">       </p>
+		<p style="margin-top: 60px;" class="header_right_font">
+			<select class="option" name="locale" size="1" style="width: 60px;" onchange="changeLocale(this.value);">
+      		<option value="zh_CN">中文</option><option value="en_US" selected="">English</option>          </select>
+         | <a href="http://opac.njxzc.edu.cn/opac/book_cart.php">暂存书架(<span id="bookcartCount">0</span>)
+			</a> | <font color="blue">陈可可</font> <strong><a href="http://opac.njxzc.edu.cn/reader/logout.php" style="color:#ff0000;">注销</a></strong></p>
+	</div>
+</div>
+
+<div id="menubar">
+	<ul id="menu_top">
+    		  	<li><a href="http://opac.njxzc.edu.cn/opac/search_adv.php" target="_self">书目检索</a></li>
+	  		  	<li><a href="http://opac.njxzc.edu.cn/top/top_lend.php" target="_self">热门推荐</a></li>
+	  		  	<li><a href="http://opac.njxzc.edu.cn/browse/cls_browsing.php" target="_self">分类浏览</a></li>
+	  		  	<li><a href="http://opac.njxzc.edu.cn/newbook/newbook_cls_browse.php" target="_self">新书通报</a></li>
+	  		  	<li><a href="http://opac.njxzc.edu.cn/peri/peri_nav_e.php" target="_self">期刊导航</a></li>
+	  		  	<li><a href="http://opac.njxzc.edu.cn/asord/asord_hist.php" target="_self">读者荐购</a></li>
+	  		  	<li><a href="http://opac.njxzc.edu.cn/shelf/curriculum_browse.php" target="_self">学科参考</a></li>
+	  		  	<li><a href="http://opac.njxzc.edu.cn/info/info_guide.php" target="_self">信息发布</a></li>
+	  		  	<li><a class="menu_top_on" style="color: #6C5B23;" href="http://opac.njxzc.edu.cn/reader/redr_info.php" target="_self">我的图书馆</a></li>
+	  		  	 	  	        <div class="clear"></div>
+	</ul>
+</div>
+<div id="submenu">
+	        <div class="clear"></div>
+</div>
+
+<script type="text/javascript"> 
+    function changeLocale(obj) {  
+    	$.ajax({
+			 url: "../locale/ajax_change_locale.php",
+ 			  data: "lan="+obj,
+ 			  type: 'POST',
+			  success: function(html){
+// 				  setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+// 					  window.location.reload(true);//页面刷新
+// 					  },500);
+				  window.location.reload(true);
+			  }
+		}); 
+    }
+    
+</script>
+<div id="mainbox">
+   <div id="container">
+  <div id="navsidebar">
+     <ul id="nav_mylib">
+     	<li><a href="http://opac.njxzc.edu.cn/reader/redr_info.php">我的首页</a></li><li><a href="http://opac.njxzc.edu.cn/reader/redr_info_rule.php">证件信息</a></li><li><a href="http://opac.njxzc.edu.cn/reader/book_lst.php">当前借阅</a></li><li id="nav_mylibhome"><a href="http://opac.njxzc.edu.cn/reader/book_hist.php">借阅历史</a></li><li><a href="http://opac.njxzc.edu.cn/reader/asord_lst.php">荐购历史</a></li><li><a href="http://opac.njxzc.edu.cn/reader/preg.php">预约信息</a></li><li><a href="http://opac.njxzc.edu.cn/reader/relegate.php">委托信息</a></li><li><a href="http://opac.njxzc.edu.cn/reader/book_shelf.php">我的书架</a></li><li><a href="http://opac.njxzc.edu.cn/reader/book_loss.php">书刊遗失</a></li><li><a href="http://opac.njxzc.edu.cn/reader/redr_lost.php">读者挂失</a></li><li><a href="http://opac.njxzc.edu.cn/reader/account.php">帐目清单</a></li><li><a href="http://opac.njxzc.edu.cn/reader/fine_pec.php">违章缴款</a></li><li><a href="http://opac.njxzc.edu.cn/reader/book_rv.php">我的书评</a></li><li><a href="http://opac.njxzc.edu.cn/reader/search_hist.php">检索历史</a></li><li><a href="http://opac.njxzc.edu.cn/reader/reader_curriculum.php">我的课程</a></li><li><a href="http://opac.njxzc.edu.cn/reader/credit_detail.php">我的积分</a></li>
+     </ul>
+  </div>
+  
+  <div id="mylib_content">
+  		<h2>借阅历史</h2>
+      			
+      <form action="http://opac.njxzc.edu.cn/reader/book_hist.php?page=5" method="post" name="frm_hist" id="f">
+      	<p style=" margin:10px auto;"><input type="radio" name="para_string" value="all" onclick="frm_hist.submit();" checked="">显示全部
+			<input type="radio" name="para_string" value="page" onclick="frm_hist.submit();">分页显示
+       		&nbsp;&nbsp;&nbsp;</p>
+       		
+        <!--  CSRF TOKEN -->        
+      	<input type="hidden" id="csrf_token" name="csrf_token" value="DUKkiX?*Oj">
+      	<!--  END -->
+     </form>  
+			<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#CCCCCC" class="table_line">
+				<tbody><tr>
+					<td bgcolor="#d8d8d8" class="greytext"></td> 
+					<td bgcolor="#d8d8d8" class="greytext">条码号</td>
+					<td bgcolor="#d8d8d8" class="greytext">题名</td>
+					<td bgcolor="#d8d8d8" class="greytext">责任者</td>
+					<td bgcolor="#d8d8d8" class="greytext">借阅日期</td>
+					<td bgcolor="#d8d8d8" class="greytext">归还日期</td>
+					<td bgcolor="#d8d8d8" class="greytext">馆藏地</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">1</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21234036</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=2f6d4e6d306a4f33792f3673376a564d6e72654a38513d3d">沉思录</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(古罗马) 玛克斯·奥勒留著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-05-11</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-05-17</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">2</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20992636</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6243496f794654525831333042354f546b45797250773d3d">达·芬奇笔记</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美)艾玛·阿·里斯特(Irma A.Richter)编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-05-06</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-06-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">3</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21378193</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=425a566a56504a3757326f4370486d527143767432773d3d">大数据时代下的统计学</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">杨轶莘编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-05-06</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-05-20</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">4</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21644172</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=3139622f3934716f585044585a416a6b472b446758673d3d">利用Python进行数据分析</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 韦斯·麦金尼著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-05-06</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-06-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">5</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21592273</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=3853626d525639646a6c466d6275626b4849736c62413d3d">世界性的帝国:唐朝:the tang dynasty</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 陆威仪著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-05-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-06-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（5）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">6</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21375576</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=5a4171507130456a4c315731356c74454836647471773d3d">华为没有秘密:华为如何探索和坚守常识</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">吴春波著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-04-29</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-06-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">三楼中厅</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">7</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21530722</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=3442493046307058357270732b574a52615642556f513d3d">小程序，巧应用:微信小程序开发实战.第2版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">熊普江, 谢宇华编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-04-08</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-05-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">8</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21427239</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=4e792b693031587a4751627a33756f49674b515974513d3d">深入理解ElasticSearch</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 拉斐尔·酷奇, 马雷克·罗戈任斯基著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-04-07</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-06-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（3）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">9</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21592663</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=656b4d34566c35526768684f572b32364e392f6c64513d3d">早期中华帝国:秦与汉:Qin and Han</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 陆威仪著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-04-02</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-06-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（5）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21586518</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=64364e524157743454526565384a6c64364d305a32413d3d">小程序实战视频课:微信小程序开发全案精讲</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">刘刚著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-17</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">11</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">02048502</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=484b4872424a334a306379794666784d4b6e576934413d3d">C语言大学实用教程学习指导.2版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">苏小红，孙志岗等编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-29</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">12</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">02048582</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=356d6c69516f4547754e5371356e38794778446744673d3d">C语言大学实用教程.2版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">苏小红，陈惠鹏，孙志岗等编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-29</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">13</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21115889</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=4737394d714f2b544c36516361524872556b5a6561513d3d">红玫瑰与白玫瑰</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">张爱玲,</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-07</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-04-01</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">14</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21234036</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=2f6d4e6d306a4f33792f3673376a564d6e72654a38513d3d">沉思录</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(古罗马) 玛克斯·奥勒留著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-07</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-05-11</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">15</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20992636</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6243496f794654525831333042354f546b45797250773d3d">达·芬奇笔记</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美)艾玛·阿·里斯特(Irma A.Richter)编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-07</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-05-06</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">16</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21671601</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=5a61534a46307364526b76694473714d7261686173413d3d">一九八四</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(英) 乔治·奥威尔著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">17</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21644172</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=3139622f3934716f585044585a416a6b472b446758673d3d">利用Python进行数据分析</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 韦斯·麦金尼著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-05-06</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21378193</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=425a566a56504a3757326f4370486d527143767432773d3d">大数据时代下的统计学</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">杨轶莘编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-05-06</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20992636</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6243496f794654525831333042354f546b45797250773d3d">达·芬奇笔记</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美)艾玛·阿·里斯特(Irma A.Richter)编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-07</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">20</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21478046</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=4567586a47646e5473666d564770617a533461536d773d3d">Elasticsearch技术解析与实战</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">朱林编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-02-25</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-04-07</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（3）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">21</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21443285</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=537551516c324b48735a476e774666585647573251413d3d">尼采诗歌选</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">孙更俊著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-12-29</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21671601</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=5a61534a46307364526b76694473714d7261686173413d3d">一九八四</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(英) 乔治·奥威尔著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-12-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">23</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21617174</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=624162617a7246624f684d4a6f617553464a795266513d3d">月亮与六便士</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(英) 毛姆著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-12-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-01-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">24</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20992636</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6243496f794654525831333042354f546b45797250773d3d">达·芬奇笔记</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美)艾玛·阿·里斯特(Irma A.Richter)编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-12-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">25</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21352583</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=4e396c59556f2b777432623463325665396267516d413d3d">娱乐至死</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 尼尔·波兹曼著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-12-11</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-12-29</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（3）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">26</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21644172</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=3139622f3934716f585044585a416a6b472b446758673d3d">利用Python进行数据分析</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 韦斯·麦金尼著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-12-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">27</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21378193</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=425a566a56504a3757326f4370486d527143767432773d3d">大数据时代下的统计学</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">杨轶莘编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-12-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-03-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21590642</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6d325a61417a4630502b762b557355482b706f4d45513d3d">机器学习之路:Caffe、Keras、scikit-learn实战</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">阿布, 胥嘉幸编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-11-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-01-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">29</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21464995</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6c3447394567703936385a58632f4373726470307a513d3d">剑指Offer:名企面试官精讲典型编程题.第2版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">何海涛著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-11-12</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2019-01-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">30</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21438265</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6b30576c325134464371327868655341724563674e673d3d">阿里传:这是阿里巴巴的世界</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 波特·埃里斯曼著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-08-30</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-08-31</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">三楼中厅</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">31</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21551238</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=7a4b756d2b76694f7a495138756e70727554534e6b413d3d">终极算法:机器学习和人工智能如何重塑世界:how the quest for the ultimate learning machine will rema...</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 佩德罗·多明戈斯著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-08-30</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-10-31</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">32</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21146209</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=37333775554b44386a424d43713647684d737a6535773d3d">Java编程思想</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) Bruce Eckel著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-08-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-11-12</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">33</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21464995</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6c3447394567703936385a58632f4373726470307a513d3d">剑指Offer:名企面试官精讲典型编程题.第2版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">何海涛著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-08-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-11-12</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">34</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21136074</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=3071665458696e627531645849514c563158337356513d3d">雨季不再来</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">三毛[著]</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-08-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-09-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">35</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21147007</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=307a53797054723855467a3046704370596a663254413d3d">Python入门经典:以解决计算问题为导向的Python编程实践</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) William F. Punch, Richard Enbody著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-07-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-08-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">36</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21489536</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=766151646d34544e7265576167786b5a415a4f4f6b773d3d">Scala集合技术手册</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">晁岳攀著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-07-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-08-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">37</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21583752</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=476a3759554c782f3765727578583977316f394170673d3d">Python程序设计教程</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">林信良著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-07-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">38</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21516459</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=2f4930614a774f384274756d35424349584f425247513d3d">用Python写网络爬虫</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(澳) Richard Lawson著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-07-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">39</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21590643</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6d325a61417a4630502b762b557355482b706f4d45513d3d">机器学习之路:Caffe、Keras、scikit-learn实战</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">阿布, 胥嘉幸编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-08-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">40</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21452173</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=3179495135684a6c49717178305247436468444c56773d3d">Python数据抓取技术与实战</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">潘庆和,赵星驰编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-09-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">41</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21372282</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=34435337366d58467245305772767473794a387337513d3d">程序是怎样跑起来的</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 矢泽久雄著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">42</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21387593</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=473862797732484a394e626e46763551787561362b673d3d">现代图论</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">殷剑宏, 金菊良编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-07-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">43</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21570208</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=63734459346b76363955736e324545354b68574738773d3d">数字化生存</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 尼古拉·尼葛洛庞帝著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-08-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">44</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21387593</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=473862797732484a394e626e46763551787561362b673d3d">现代图论</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">殷剑宏, 金菊良编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-07</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">45</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21583752</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=476a3759554c782f3765727578583977316f394170673d3d">Python程序设计教程</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">林信良著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-02</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">46</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20879141</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=79597477446c6f4169444d77664f6251314e704b7a673d3d">概率论与数理统计学习辅导</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">贺兴时, 薛红, 刘宣会编</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-02</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-07-07</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">47</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21578856</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6a75364335483036387038317765795a4553636646673d3d">JavaScript数据可视化编程</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) Stephen A. Thomas著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-04-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-04-21</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">48</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21452173</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=3179495135684a6c49717178305247436468444c56773d3d">Python数据抓取技术与实战</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">潘庆和,赵星驰编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-04-08</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">49</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21516459</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=2f4930614a774f384274756d35424349584f425247513d3d">用Python写网络爬虫</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(澳) Richard Lawson著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-04-08</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">50</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21590643</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6d325a61417a4630502b762b557355482b706f4d45513d3d">机器学习之路:Caffe、Keras、scikit-learn实战</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">阿布, 胥嘉幸编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">51</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21579694</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=4b566248334f38536e6d2f43796f624e6431333245773d3d">网络是怎样连接的</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日)户根勤著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-23</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-04-08</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">52</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21570208</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=63734459346b76363955736e324545354b68574738773d3d">数字化生存</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 尼古拉·尼葛洛庞帝著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-23</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">53</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21379441</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=4e6575446c32436c41616d663134712b4752784f43773d3d">计算机是怎样跑起来的</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 矢泽久雄著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-17</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-23</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">54</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21387593</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=473862797732484a394e626e46763551787561362b673d3d">现代图论</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">殷剑宏, 金菊良编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-17</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-07</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">55</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21372282</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=34435337366d58467245305772767473794a387337513d3d">程序是怎样跑起来的</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 矢泽久雄著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-17</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">56</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21077021</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=46476672352f56632f364a7956315176357a783957773d3d">人间失格</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 太宰治著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-13</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">57</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21234776</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=4d4f626a6e4645714b6c7261535765386b63756254673d3d">无比芜杂的心绪:村上春树杂文集</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 村上春树著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-13</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-17</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">58</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21571837</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=5376364e3671366c2f71794a7167674c2b336e736e673d3d">面向机器智能的TensorFlow实践</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美)山姆·亚伯拉罕(Sam Abrahams)[等]著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-08</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-16</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">59</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21530734</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=30586873496d54523371594537345739754a656336413d3d">白话深度学习与TensorFlow</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">高扬, 卫峥编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-08</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-04-08</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">60</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21583752</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=476a3759554c782f3765727578583977316f394170673d3d">Python程序设计教程</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">林信良著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-03-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-02</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">61</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21583752</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=476a3759554c782f3765727578583977316f394170673d3d">Python程序设计教程</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">林信良著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-02-26</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-02-26</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">62</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20879141</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=79597477446c6f4169444d77664f6251314e704b7a673d3d">概率论与数理统计学习辅导</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">贺兴时, 薛红, 刘宣会编</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-02-26</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-05-02</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">63</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21199666</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=423156793854387546766130656a6a7a4535623162513d3d">失重</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">陈忠实</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-01-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-01-12</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">64</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21579735</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=656e364d79454b5255696f77562f64492f67516f42513d3d">我与白鹿原</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">陈忠实著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-12-10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-01-12</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">65</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20879141</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=79597477446c6f4169444d77664f6251314e704b7a673d3d">概率论与数理统计学习辅导</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">贺兴时, 薛红, 刘宣会编</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-12-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-02-26</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">66</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21607765</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6e52533636787a366b76663748314a6f6e7238422b673d3d">机器学习实践应用</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">李博著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-12-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-02-26</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">67</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21446257</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=5847326141506c61764c55564b474f78312f656b4a413d3d">Python数据分析</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(印尼) Ivan Idris著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-12-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-02-26</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">68</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21246832</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=47463132494e61756b4d326379674e4c3063783963513d3d">2014年计算机网络联考复习指导</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">王道论坛组编</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-11-30</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-01-12</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">69</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21350633</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6e5a44386a45557058716d67754c4f66586a6b436e413d3d">白岩松:行走在爱与恨之间</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">白岩松</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-11-24</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-12-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">70</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21334908</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=7464794b374d6851437978584c7a744141724e4747513d3d">没有女人的男人们</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 村上春树著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-11-13</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-11-25</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">71</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21199666</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=423156793854387546766130656a6a7a4535623162513d3d">失重</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">陈忠实</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-11-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2018-01-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">72</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21415370</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=756c526774552f63445742476f6f7a42394f70446f673d3d">人性中的善良天使</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 斯蒂芬·平克著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-11-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-11-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（5）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">73</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21580282</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=33312b33316b6d6d2b6b692f43684d63384d47656f673d3d">Python网络爬虫实战</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">胡松涛编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-10-14</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-12-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">74</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21306515</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=482f4c77573271506f33476d436c70393257503946513d3d">Python基础教程:from novice to professional.第2版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(挪) Magnus lie hetland著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-10-14</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-11-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">75</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21446257</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=5847326141506c61764c55564b474f78312f656b4a413d3d">Python数据分析</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(印尼) Ivan Idris著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-10-14</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-12-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">76</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21306902</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=672f72346e7433756d33446e644d4e524b48463038673d3d">计算机网络:一种开源的设计实现方法:an open source approach</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">Ying-Dar Lin, Ren-Hung Hwang, (美) Fred Baker著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-10-11</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-11-25</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">77</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21415370</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=756c526774552f63445742476f6f7a42394f70446f673d3d">人性中的善良天使</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 斯蒂芬·平克著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-09-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-11-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（5）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">78</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21309322</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=414343745672304a747664714b316f505543346e38413d3d">冰河</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">余秋雨著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-08-16</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-09-07</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">79</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20771458</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=717a3474774541585673565a3246527a335735304a413d3d">计算机网络</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">武忠主编</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-08-02</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-09-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">80</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21277810</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=486967534b327a6d6a32303554467a667436466d45413d3d">虚像小丑</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 东野圭吾著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-06-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-07-06</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">81</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21358934</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=704c4163476c3436584e49454a7465366c4952714a673d3d">濒死之眼</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 东野圭吾著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-06-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-07-06</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">82</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21238139</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=565736754c4439536d507377505733304852475035773d3d">算法设计与分析.第3版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">王晓东编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-06-17</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-09-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">83</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21285013</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=797048747476526537644f78424556335339694f2f673d3d">Python编程入门</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(加) Toby Donaldson著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-06-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-07-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">84</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21415370</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=756c526774552f63445742476f6f7a42394f70446f673d3d">人性中的善良天使</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 斯蒂芬·平克著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-06-01</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-09-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（5）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">85</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21227562</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=597061446e5538625376764339364c49596c4d6933773d3d">操作系统:精髓与设计原理:internals and design principles</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) William Stallings著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-04-24</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-05-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">86</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21160770</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6443543847344772784b663532414e677961504148413d3d">Java从入门到精通:实例版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">明日科技编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-04-24</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-06-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">87</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21286443</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=505448507670516e322b716b4449774876754f7655673d3d">大型数据库系统应用 (Oracle 11g) 实验教程</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">主编杨宁</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-04-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-06-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">88</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21208861</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=4c6c5977455839552f795a746e74796a5636587030773d3d">Java趣味编程100例</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">衡友跃等编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-04-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-06-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">89</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21260093</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=413473593268546d65596265615465657a4e50596c773d3d">电脑组装与维护实战从入门到精通</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">龙马工作室编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-03-26</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-05-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">90</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21208861</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=4c6c5977455839552f795a746e74796a5636587030773d3d">Java趣味编程100例</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">衡友跃等编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-03-11</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-04-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">91</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">M2017021259</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=73546837717a62764f57526478574d514e674a3461513d3d">汇编语言</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">王爽著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-03-11</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-04-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">92</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21338886</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=354c45595932564441796a4642546d443446445770773d3d">大数据分析:决胜互联网金融时代:emerging business intelligence and analytic trends for today's busi...</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) Michael Minelli, Michele Chambers, Ambiga Dhiraj著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-03-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-03-11</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">93</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21513762</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6975424c626e726c654b5a667848657556524b4e4d673d3d">智能大数据SMART准则:数据分析方法、案例和行动纲领:using smart big data, analytics and metrics to m...</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) Bernard Marr著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-03-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-03-11</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（3）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">94</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21157299</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=332b6c594c562f366a4d52717764614f776f673233513d3d">Head first python.影印版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">Paul Barry著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-02-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-04-25</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">95</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21147006</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=307a53797054723855467a3046704370596a663254413d3d">Python入门经典:以解决计算问题为导向的Python编程实践</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) William F. Punch, Richard Enbody著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-02-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-04-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">96</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21194266</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=346c46336765314139535858714462424b4d735268773d3d">Oracle从入门到精通</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">明日科技编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-02-27</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-04-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">97</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">020908041</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=39324336653134786855706854303072565547326d513d3d">Dreamweaver 8和JSP动态网站开发</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">林建宏, 赖慧敏编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-02-21</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-04-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">98</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21499396</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6d69736c4e4751344a7144774d626b44344e533352673d3d">微机原理、汇编与接口技术教程</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">王晓虹 ... [等] 编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-01-14</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-03-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">99</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21204492</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=7152646b707369734d4d657a547449665170785a46513d3d">数字电子技术基础全程学习指导与习题精解</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">主编肖红军</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-12-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-01-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">100</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20972409</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=51464c386d4a4d5a7a64515852554d63536c6e396c513d3d">C和指针</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) Kenneth A. Reek著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-12-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-01-14</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">101</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21177909</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=766663304b6376306c6d566b384e7677656e646f4f413d3d">数据结构与算法:C语言版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">胡明, 王红梅编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-12-24</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-01-14</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">102</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">M2017021258</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=73546837717a62764f57526478574d514e674a3461513d3d">汇编语言</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">王爽著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-12-24</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-02-23</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">103</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21495814</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=54735037562b793855775a514b30576b612b635732773d3d">C语言课程设计案例精编.第3版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">吴启武主编</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-12-19</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-01-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">104</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21244954</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=497631503866366c70564a39426f6b353837624e35413d3d">计算机组成与结构</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">谢永宁编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-12-11</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-12-24</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">105</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20864983</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=2b756f514b566b687a36734a783062653773485653673d3d">新编数字电路与EDA技术实验实训指导</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">陈小毛, 胡机秀, 卜波涛编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-12-11</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-01-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">106</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20802704</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6e4d396735567a30626756354d3878544b6a305469413d3d">数据库系统简明教程</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">王珊</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-11-27</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-01-08</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">107</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20986901</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=32616d75417a7a655730676743732b2f7978716248773d3d">万历十五年</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">黄仁宇著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-11-10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2017-01-12</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（5）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">108</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21426531</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=46493641554e354639326f7673686b444730717348673d3d">头顶的星空:美学与终极关怀</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">潘知常著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-11-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-12-10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">109</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21177909</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=766663304b6376306c6d566b384e7677656e646f4f413d3d">数据结构与算法:C语言版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">胡明, 王红梅编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-11-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-12-24</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">110</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">M2017021258</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=73546837717a62764f57526478574d514e674a3461513d3d">汇编语言</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">王爽著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-10-29</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-12-24</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">111</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20972409</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=51464c386d4a4d5a7a64515852554d63536c6e396c513d3d">C和指针</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) Kenneth A. Reek著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-10-29</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-12-28</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">112</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21244954</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=497631503866366c70564a39426f6b353837624e35413d3d">计算机组成与结构</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">谢永宁编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-10-14</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-12-11</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">113</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20772295</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=69457343414c667a63494c47427231336a384d5574673d3d">废都</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">贾平凹著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-25</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-10-11</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">114</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21208554</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=587a34702b6b413250624f7553767078706d653532673d3d">数字电子技术基础</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">王克义编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-12</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-11-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">115</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21373548</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=762f344467546a3130657073566e5a626c6d465535673d3d">没有色彩的多崎作和他的巡礼之年</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 村上春树著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-12</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">116</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21402067</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=794964684b4648364743797a664134764a62615a79513d3d">数字电子技术</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">李丽敏, 张玲玉主编</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-08</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-11-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">117</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21426531</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=46493641554e354639326f7673686b444730717348673d3d">头顶的星空:美学与终极关怀</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">潘知常著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-07</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-11-09</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">118</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20786223</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=47796d425964464f424e54516d6f6a534b69477a55413d3d">数据库系统概论</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">王珊, 萨师煊</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-11-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">119</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21347511</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=7759794c736276726d6a5845577a3545636a707a39513d3d">皮囊</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">蔡崇达著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-08</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">120</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21127450</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=39683138344f6a5664617662762b2f383632324748513d3d">绑架游戏</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 东野圭吾著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-08</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">121</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21177909</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=766663304b6376306c6d566b384e7677656e646f4f413d3d">数据结构与算法:C语言版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">胡明, 王红梅编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-11-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">122</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20972408</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=51464c386d4a4d5a7a64515852554d63536c6e396c513d3d">C和指针</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) Kenneth A. Reek著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-07-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">123</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21218176</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=5735635244674b374375324c4d30692b477a54796c513d3d">疯狂Java程序员的基本修养</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">李刚编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-07-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">124</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21006325</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=5655427a6c697347774a57787057472f2b31754766413d3d">妙趣横生的算法(C语言实现)</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">杨峰编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-07-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">125</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21177909</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=766663304b6376306c6d566b384e7677656e646f4f413d3d">数据结构与算法:C语言版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">胡明, 王红梅编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-07-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">126</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20786223</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=47796d425964464f424e54516d6f6a534b69477a55413d3d">数据库系统概论</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">王珊, 萨师煊</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-07-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">127</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21133254</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=79756f5431796d5049413861674d44576f49396378413d3d">圣女的救济:《嫌疑人X的献身》续集</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日)东野圭吾著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-07-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">128</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21127450</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=39683138344f6a5664617662762b2f383632324748513d3d">绑架游戏</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 东野圭吾著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-07-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">129</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20994538</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=503866337936737048487a72522b5752612f315255413d3d">C语言程序设计实验与习题集</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">彭文艺, 韩丽娟编</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-06-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">130</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20944486</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=7a4e4842453761626e6e4b3372394937706b6f7279773d3d">天黑以后</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">村上春树著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-06-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-06-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">131</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21145869</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=4a4a437473455444624b33414a692b302f72535255513d3d">喜欢你是寂静的:林徽因传</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">王臣著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-06-16</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（5）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">132</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">M2016025057</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=774e563473615859384a71502f384173613244794f673d3d">走吧 张小砚</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">张小砚著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-06-16</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-09-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">133</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20928934</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6557662b4f536d73442b58314c394d684930424f51413d3d">国境以南 太阳以西.新版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日)村上春树著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-06-10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-06-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">134</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20885279</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6957474f716b6f43516a3355357830583235573778413d3d">高等数学教材辅导</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">马杰主编</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-06-05</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-06-21</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">135</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20687009</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=613165586b587552524f30577a6f2b77694c547a74773d3d">C语言程序设计教程</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">朱承学主编</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-05-21</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-06-21</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">136</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20806130</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=66432f4a727a5a61514558354a347a737a61736d41513d3d">红岩</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">罗广斌, 杨益言著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-05-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-07-01</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">137</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20998658</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=4b6473367335706d5538445a6c515365574c70774d773d3d">幻夜</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 东野圭吾著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-05-15</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-05-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">138</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21273265</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=767862394e463637707a6464707742342f77747438513d3d">罗马人的故事.1,罗马非一日建成</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日)盐野七生著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-05-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-07-01</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（5）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">139</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">M2016022926</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=56386463504e4e2f7a6c4d37393250317a42652f34673d3d">史铁生精选集</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">史铁生著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-05-02</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-07-01</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">140</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21351590</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6e767065784e6179357746362b4d746f2f324b4942673d3d">解忧杂货店</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 东野圭吾著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-04-25</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-05-02</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">141</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21034795</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=494c353061754c332f5a365a507931635370384741673d3d">清朝其实很有趣儿</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">雾满拦江著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-04-25</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-06-16</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（5）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">142</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21291799</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=5747414337596b4c4b6d7878797053785466736237673d3d">自由在高处</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">熊培云著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-04-23</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-05-04</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">方山借书处</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">143</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20872891</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=73504c525651734a334a2f2b44775a4b554976584e673d3d">高等数学辅导:同济五版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">马志敏主编</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-04-10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-05-15</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">144</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20908809</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=5066564b6d556f4e506d6b33334b6b344534694e6e413d3d">C语言程序设计</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">何钦铭, 颜晖主编</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-04-10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-05-18</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">145</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21204957</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6351376f4f6e754b445967506144594b2f78392b57773d3d">淘金大学英语4级写作范文背诵100篇</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">主编钦寅</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-03-30</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-04-23</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（5）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">146</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20990688</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=68696646434c4d5446542b312f53597235552f6c77773d3d">烧饼歌中的历史</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(明) 刘伯温著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-03-30</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-04-25</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（5）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">147</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21120416</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=34594b366b76614f7a4438383272793733442b4e4e413d3d">杀人之门</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 东野圭吾著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-03-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-03-27</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">148</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20917662</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=2f4f45473845495457484c30636c79677878733776413d3d">710分大学英语四六级考试高分词汇突破:1-6级</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">主编马静</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-03-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-03-27</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（5）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">149</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21303807</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=536e686d79374b49356b384f5a3861766c326b7654513d3d">黑客与画家:来自计算机时代的高见</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) Paul Graham著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-03-01</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-04-27</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">150</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21303807</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=536e686d79374b49356b384f5a3861766c326b7654513d3d">黑客与画家:来自计算机时代的高见</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) Paul Graham著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-03-01</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-03-01</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">151</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21070727</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6e7271614b5772655666796c5a4d5531376e2b3337673d3d">朝鲜战场上那支没有番号的连队</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">政夯著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-03-01</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-03-27</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">152</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21317933</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=496b302f37376b667672416136484a6a776f626a53513d3d">大教堂与集市</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) Eric S. Raymond著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-03-01</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-04-25</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（3）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">153</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20957653</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=6f31626a656b4738545439487276435565614a3644513d3d">寻羊冒险记</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日)村上春树著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-01-10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-02-24</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">154</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20862974</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=7568454d65683459667664555a666a4b6b4c51616c513d3d">1973年的弹子球</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(日) 村上春树著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-01-10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-02-24</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">155</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20353011</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=71536259542f57784645316a4b412b576c41453967673d3d">Java语言程序设计.第2版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">丁振凡编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-01-03</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-01-07</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（2）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">156</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20858003</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=7057726c426952703733536265304641347a425867413d3d">高等数学典型例题与解法</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">李建平, 朱健民, 敖武峰编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2015-12-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2015-12-29</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">157</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20858003</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=7057726c426952703733536265304641347a425867413d3d">高等数学典型例题与解法</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">李建平, 朱健民, 敖武峰编著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2015-12-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2015-12-22</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">自科（1）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">158</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">20890995</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=527332684e4861346e424a6d344369387558393874413d3d">且听风呤</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">村上春树</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2015-12-15</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-01-08</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">159</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21350845</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=744e65622b48734d4f35625875727532324f626945413d3d">教父前传</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 马里奥·普佐, 埃德·法尔科著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2015-12-15</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2016-01-08</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">160</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">21360748</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=4450587a366a7570544d39325269586e4a7879665a773d3d">终极教父.第2版</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">(美) 马里奥·普佐著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2015-12-15</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2015-12-29</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFFFF" class="whitetext" width="5%">161</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="10%">020370787</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="25%"><a class="blue" href="http://opac.njxzc.edu.cn/opac/item.php?marc_no=533246687739466230337074765a554c6f436a417a773d3d">活着的事</a></td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">史铁生著</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2015-11-29</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="12%">2015-12-10</td>
+					<td bgcolor="#FFFFFF" class="whitetext" width="15%">社科（4）</td>
+				</tr>
+			</tbody></table>
+  </div>
+  
+  <div class="clear"></div>
+  
+</div><div id="footer"><div id="copy"><p> 南京晓庄学院图书馆&nbsp;&nbsp; OPAC v5.6.1.180904  &nbsp;&nbsp;</p><p>© 1999-2019 <a target="_blank" href="http://www.libsys.com.cn/">Jiangsu Huiwen Software Ltd. 江苏汇文软件有限公司</a></p></div></div></div><audio controls="controls" style="display: none;"></audio></body><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></html>

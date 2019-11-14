@@ -1,0 +1,90 @@
+小程序，巧应用:微信小程序开发实战.第2版	熊普江, 谢宇华编著	26
+小程序实战视频课:微信小程序开发全案精讲	刘刚著	1
+C语言大学实用教程学习指导.2版	苏小红，孙志岗等编著	19
+C语言大学实用教程.2版	苏小红，陈惠鹏，孙志岗等编著	19
+机器学习之路:Caffe、Keras、scikit-learn实战	阿布, 胥嘉幸编著	42
+剑指Offer:名企面试官精讲典型编程题.第2版	何海涛著	58
+终极算法:机器学习和人工智能如何重塑世界:how the quest for the ultimate learning machine will rema...	(美) 佩德罗·多明戈斯著	62
+Java编程思想	(美) Bruce Eckel著	76
+剑指Offer:名企面试官精讲典型编程题.第2版	何海涛著	76
+Python入门经典:以解决计算问题为导向的Python编程实践	(美) William F. Punch, Richard Enbody著	41
+Scala集合技术手册	晁岳攀著	41
+Python程序设计教程	林信良著	60
+用Python写网络爬虫	(澳) Richard Lawson著	60
+机器学习之路:Caffe、Keras、scikit-learn实战	阿布, 胥嘉幸编著	101
+Python数据抓取技术与实战	潘庆和,赵星驰编著	107
+程序是怎样跑起来的	(日) 矢泽久雄著	0
+现代图论	殷剑宏, 金菊良编著	60
+数字化生存	(美) 尼古拉·尼葛洛庞帝著	101
+现代图论	殷剑宏, 金菊良编著	12
+Python程序设计教程	林信良著	17
+概率论与数理统计学习辅导	贺兴时, 薛红, 刘宣会编	66
+JavaScript数据可视化编程	(美) Stephen A. Thomas著	2
+Python数据抓取技术与实战	潘庆和,赵星驰编著	41
+用Python写网络爬虫	(澳) Richard Lawson著	41
+机器学习之路:Caffe、Keras、scikit-learn实战	阿布, 胥嘉幸编著	52
+网络是怎样连接的	(日)户根勤著	16
+数字化生存	(美) 尼古拉·尼葛洛庞帝著	57
+计算机是怎样跑起来的	(日) 矢泽久雄著	6
+现代图论	殷剑宏, 金菊良编著	51
+程序是怎样跑起来的	(日) 矢泽久雄著	63
+面向机器智能的TensorFlow实践	(美)山姆·亚伯拉罕(Sam Abrahams)[等]著	69
+白话深度学习与TensorFlow	高扬, 卫峥编著	31
+Python程序设计教程	林信良著	59
+Python程序设计教程	林信良著	0
+概率论与数理统计学习辅导	贺兴时, 薛红, 刘宣会编	65
+概率论与数理统计学习辅导	贺兴时, 薛红, 刘宣会编	79
+机器学习实践应用	李博著	79
+Python数据分析	(印尼) Ivan Idris著	79
+2014年计算机网络联考复习指导	王道论坛组编	43
+Python网络爬虫实战	胡松涛编著	50
+Python基础教程:from novice to professional.第2版	(挪) Magnus lie hetland著	35
+Python数据分析	(印尼) Ivan Idris著	56
+计算机网络:一种开源的设计实现方法:an open source approach	Ying-Dar Lin, Ren-Hung Hwang, (美) Fred Baker著	45
+计算机网络	武忠主编	34
+算法设计与分析.第3版	王晓东编著	80
+Python编程入门	(加) Toby Donaldson著	46
+操作系统:精髓与设计原理:internals and design principles	(美) William Stallings著	28
+Java从入门到精通:实例版	明日科技编著	55
+大型数据库系统应用 (Oracle 11g) 实验教程	主编杨宁	61
+Java趣味编程100例	衡友跃等编著	61
+电脑组装与维护实战从入门到精通	龙马工作室编著	57
+Java趣味编程100例	衡友跃等编著	38
+汇编语言	王爽著	38
+大数据分析:决胜互联网金融时代:emerging business intelligence and analytic trends for today's busi...	(美) Michael Minelli, Michele Chambers, Ambiga Dhiraj著	7
+Head first python.影印版	Paul Barry著	56
+Python入门经典:以解决计算问题为导向的Python编程实践	(美) William F. Punch, Richard Enbody著	49
+Oracle从入门到精通	明日科技编著	50
+Dreamweaver 8和JSP动态网站开发	林建宏, 赖慧敏编著	56
+微机原理、汇编与接口技术教程	王晓虹 ... [等] 编著	49
+数字电子技术基础全程学习指导与习题精解	主编肖红军	8
+C和指针	(美) Kenneth A. Reek著	17
+数据结构与算法:C语言版	胡明, 王红梅编著	21
+汇编语言	王爽著	61
+C语言课程设计案例精编.第3版	吴启武主编	16
+计算机组成与结构	谢永宁编著	13
+新编数字电路与EDA技术实验实训指导	陈小毛, 胡机秀, 卜波涛编著	24
+数据库系统简明教程	王珊	42
+数据结构与算法:C语言版	胡明, 王红梅编著	51
+汇编语言	王爽著	56
+C和指针	(美) Kenneth A. Reek著	60
+计算机组成与结构	谢永宁编著	58
+数字电子技术基础	王克义编著	52
+数字电子技术	李丽敏, 张玲玉主编	56
+数据库系统概论	王珊, 萨师煊	60
+数据结构与算法:C语言版	胡明, 王红梅编著	60
+C和指针	(美) Kenneth A. Reek著	62
+疯狂Java程序员的基本修养	李刚编著	62
+妙趣横生的算法(C语言实现)	杨峰编著	62
+数据结构与算法:C语言版	胡明, 王红梅编著	62
+数据库系统概论	王珊, 萨师煊	62
+C语言程序设计实验与习题集	彭文艺, 韩丽娟编	74
+高等数学教材辅导	马杰主编	16
+C语言程序设计教程	朱承学主编	31
+高等数学辅导:同济五版	马志敏主编	35
+C语言程序设计	何钦铭, 颜晖主编	38
+黑客与画家:来自计算机时代的高见	(美) Paul Graham著	57
+黑客与画家:来自计算机时代的高见	(美) Paul Graham著	0
+Java语言程序设计.第2版	丁振凡编著	4
+高等数学典型例题与解法	李建平, 朱健民, 敖武峰编著	7
+高等数学典型例题与解法	李建平, 朱健民, 敖武峰编著	0
