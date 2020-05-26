@@ -29,7 +29,6 @@ def get_PositionInfo():
         'city':'全国',
         'pageNo':'1',
         'pageSize':'15'
-
     }
     #打开要写入的文件
     writefile = open("mobleLagouInfo.txt","a+")
@@ -61,7 +60,6 @@ def get_PositionInfo():
                 writefile.write(company['companyName']+'\t')
                 writefile.write(company['companyFullName']+'\t')
                 writefile.write(company['createTime']+'\t'+'\n')
-
 
     writefile.close()
 
